@@ -51,3 +51,29 @@ function logFinalResult(score) {
     console.log(`You have lost the game with a score of ${finalScore}`);
   }
 };
+
+function game(rounds = 5) {
+  let score = { player: 0, computer: 0 };
+
+  let playerChoice, computerChoice;
+  for (let i = 1; i <= rounds; i++) {
+    console.log(`Round: ${i} of ${rounds}, Score: Player: ${score['player']} Computer: ${score['computer']}`);
+
+    playerChoice   = playerSelection();
+    computerChoice = getComputerChoice();
+    result = playRound(playerChoice, computerChoice);
+    logRoundResult(result, playerChoice, computerChoice);
+
+    if (result === 1) score['player'] += 1;
+    if (result === -1) score['computer'] += 1;
+  }
+
+  logFinalResult(score);
+
+  let playAgain = prompt('Play again? (y/n)');
+  while (!['y', 'n'].includes(playAgain)) {
+    playAgain = prompt('Play again? (y/n)').toLowerCase();
+  }
+
+  return playAgain === 'y' ? game(rounds) : null;
+};
