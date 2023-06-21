@@ -81,4 +81,4 @@ function game(rounds = 5) {
   return playAgain === 'y' ? game(rounds) : null;
 };
 
-startButton.addEventListener('click', () => game());
+startButton.addEventListener('click', () => roundsCount > 0 ? game(roundsCount) : alert('Minimum number of rounds is 1'));
