@@ -77,3 +77,5 @@ function game(rounds = 5) {
 
   return playAgain === 'y' ? game(rounds) : null;
 };
+
+startButton.addEventListener('click', () => game());
