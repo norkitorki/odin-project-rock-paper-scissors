@@ -53,6 +53,7 @@ function logFinalResult(score) {
 };
 
 function game(rounds = 5) {
+  console.clear();
   let score = { player: 0, computer: 0 };
 
   let playerChoice, computerChoice;
