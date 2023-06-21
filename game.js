@@ -1,7 +1,4 @@
-const roundsSelect = document.getElementById('game-rounds');
-const startButton = document.querySelector('.start-game');
 const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
-let roundsCount = 5;
 
 function getComputerChoice() {
   const index = Math.floor(Math.random() * 3);
@@ -79,7 +76,3 @@ function game(rounds = 5) {
 
   return playAgain === 'y' ? game(rounds) : null;
 };
-
-roundsSelect.addEventListener('change', (e) => roundsCount = Number(e.target.value));
-
-startButton.addEventListener('click', () => roundsCount > 0 ? game(roundsCount) : alert('Minimum number of rounds is 1'));
