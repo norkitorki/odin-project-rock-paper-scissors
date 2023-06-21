@@ -20,10 +20,9 @@ function playerSelection() {
 };
 
 function playRound(playerChoice, computerChoice) {
-  const choices = [playerChoice, computerChoice];
   const winningOutcomes = ['RockScissors', 'PaperRock', 'ScissorsPaper'];
 
-  if (winningOutcomes.includes(choices.join(''))) {
+  if (winningOutcomes.includes(`${playerChoice}${computerChoice}`)) {
     return 1;
   } else if (playerChoice === computerChoice) {
     return 0;
