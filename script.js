@@ -29,3 +29,13 @@ function playRound(playerChoice, computerChoice) {
     return -1;
   }
 };
+
+function logRoundResult(result, playerChoice, computerChoice) {
+  if (result === 1) {
+    console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+  } else if (result === 0) {
+    console.log(`It's a draw! both players chose ${playerChoice}`);
+  } else {
+    console.log(`You loose! ${computerChoice} beats ${playerChoice}`);
+  }
+};
