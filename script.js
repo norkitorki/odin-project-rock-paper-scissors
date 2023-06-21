@@ -1,6 +1,7 @@
 const roundsSelect = document.getElementById('game-rounds');
 const startButton = document.querySelector('.start-game');
 const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
+let roundsCount = 5;
 
 function getComputerChoice() {
   const index = Math.floor(Math.random() * 3);
