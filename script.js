@@ -1,3 +1,4 @@
+const roundsSelect = document.getElementById('game-rounds');
 const startButton = document.querySelector('.start-game');
 const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
 
