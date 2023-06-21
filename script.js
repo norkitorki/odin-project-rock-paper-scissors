@@ -39,3 +39,15 @@ function logRoundResult(result, playerChoice, computerChoice) {
     console.log(`You loose! ${computerChoice} beats ${playerChoice}`);
   }
 };
+
+function logFinalResult(score) {
+  const finalScore = `${score['player']} to ${score['computer']}`;
+
+  if (score['player'] > score['computer']) {
+    console.log(`Congratulations Player! You have won the game with a score of ${finalScore}`);
+  } else if (score['player'] === score['computer']) {
+    console.log(`The game ended in a draw at ${finalScore}`);
+  } else {
+    console.log(`You have lost the game with a score of ${finalScore}`);
+  }
+};
