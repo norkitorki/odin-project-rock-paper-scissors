@@ -16,3 +16,16 @@ function playerSelection() {
 
   return choice;
 };
+
+function playRound(playerChoice, computerChoice) {
+  const choices = [playerChoice, computerChoice];
+  const winningOutcomes = ['RockScissors', 'PaperRock', 'ScissorsPaper'];
+
+  if (winningOutcomes.includes(choices.join(''))) {
+    return 1;
+  } else if (playerChoice === computerChoice) {
+    return 0;
+  } else {
+    return -1;
+  }
+};
