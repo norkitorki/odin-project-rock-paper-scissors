@@ -1,3 +1,12 @@
+const gameControls = document.querySelector('.game-controls');
+const roundsSelect = document.getElementById('game-rounds');
+const startButton  = document.querySelector('.start-game');
+const gameChoices  = document.querySelector('.game-choices');
+const buttons      = gameChoices.querySelectorAll('button');
+const output       = document.querySelector('.output');
+const gameOutput   = document.querySelector('.game-output');
+const roundOutput  = document.querySelector('.round-output');
+
 const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
 
 function getComputerChoice() {
