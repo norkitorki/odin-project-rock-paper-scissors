@@ -12,10 +12,33 @@
   <body>
     <h1>Rock Paper Scissors</h1>
 
-    <p>Below you can adjust how many rounds you would like to play. Click 'Start Game' to begin the game.</p>
+    <div class="game-controls">
+      <label for="game-rounds">Rounds</label>
+      <input type="number" name="game-rounds" id="game-rounds" min="1" placeholder="5">
+      <button class="start-game">Start Game</button>
+    </div>
 
-    <label for="game-rounds">Rounds</label>
-    <input type="number" name="game-rounds" id="game-rounds" min="1" placeholder="5">
-    <button class="start-game">Start Game</button>
+    <div class="game-choices hidden">
+      <button>Rock</button>
+      <button>Paper</button>
+      <button>Scissors</button>
+    </div>
+
+    <div class="output hidden">
+      <div class="game-output"></div>
+
+      <div class="choices">
+        <div class="player-choice">
+          <h2>Player</h2>
+          <img src="" alt="" width="128" height="128">
+        </div>
+        <div class="computer-choice">
+          <h2>Computer</h2>
+          <img src="" alt="" width="128" height="128"> 
+        </div>
+      </div>
+
+      <p class="round-output"></p>
+    </div>
   </body>
 </html>
