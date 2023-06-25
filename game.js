@@ -27,15 +27,34 @@ function initializeGame() {
   return null;
 };
 
-function playerSelection() {
-  let instructions = `Please input your choice:\n1. ${CHOICES[0]}\n2. ${CHOICES[1]}\n3. ${CHOICES[2]}\n\nOr input 'rock', 'paper', or 'scissors'.`, choice;
+function playRound(playerChoice, computerChoice, maxRounds) {
+  if (gameActive) {
+    const roundResult = roundResults(playerChoice, computerChoice);
 
-  while (!CHOICES.includes(choice)) {
-    choice = prompt(instructions);
-    choice = CHOICES[Number(choice) - 1] || CHOICES.find(el => el.toLowerCase() === choice.toLowerCase());
+    displayChoice('player', playerChoice);
+    displayChoice('computer', computerChoice);
+
+    roundOutput.textContent = logRoundResult(roundResult, playerChoice, computerChoice);
+    styleRoundOutput(roundOutput, roundResult);
+
+    output.classList.remove('hidden');
+
+    if (roundResult === 1)  score['player'] += 1;
+    if (roundResult === -1) score['computer'] += 1;
+    updateDisplayedScore(score);
+
+    if (currentRound < maxRounds) {
+      gameOutput.textContent = `Round: ${currentRound} of ${maxRounds}`;
+      currentRound += 1;
+    } else {
+      gameOutput.textContent = logFinalResult(score);
+      gameControls.classList.remove('hidden');
+      gameChoices.classList.add('hidden');
+      gameActive = false;
+    }
   }
 
-  return choice;
+  return null;
 };
 
 function playRound(playerChoice, computerChoice) {
