@@ -9,6 +9,7 @@ const roundOutput  = document.querySelector('.round-output');
 
 const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
 
+let roundsCount = 5, gameActive = false, currentRound, score;
 function getComputerChoice() {
   const index = Math.floor(Math.random() * 3);
   return CHOICES[index];
