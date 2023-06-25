@@ -15,6 +15,16 @@ roundsSelect.addEventListener('change', (e) => roundsCount = Number(e.target.val
 startButton.addEventListener('click', () => roundsCount > 0 ? initializeGame() : alert('Minimum number of rounds is 1'));
 buttons.forEach(btn => btn.addEventListener('click', () => playRound(btn.textContent, getComputerChoice(), roundsCount)));
 
+function initializeGame() {
+  gameActive   = true;
+  currentRound = 1;
+  score        = { player: 0, computer: 0 };
+
+  [gameOutput, roundOutput].forEach(el => el.textContent = '');
+  [gameControls, output].forEach(el => el.classList.add('hidden'));
+  gameChoices.classList.remove('hidden');
+
+  return null;
 };
 
 function playerSelection() {
