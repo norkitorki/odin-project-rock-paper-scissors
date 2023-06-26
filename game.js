@@ -22,6 +22,8 @@ function initializeGame() {
   currentRound = 1;
   score        = { player: 0, computer: 0 };
 
+  updateDisplayedScore(score);
+  
   [gameOutput, roundOutput].forEach(el => el.textContent = '');
   [gameControls, output].forEach(el => el.classList.add('hidden'));
   gameChoices.classList.remove('hidden');
