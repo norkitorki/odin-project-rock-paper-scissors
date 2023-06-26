@@ -45,12 +45,13 @@ function playRound(playerChoice, computerChoice, maxRounds) {
 
     output.classList.remove('hidden');
 
+    if (roundResult === 0) return null;
     if (roundResult === 1)  score['player'] += 1;
     if (roundResult === -1) score['computer'] += 1;
+
     updateDisplayedScore(score);
 
     if (currentRound < maxRounds) {
-      gameOutput.textContent = `Round: ${currentRound} of ${maxRounds}`;
       currentRound += 1;
     } else {
       gameOutput.textContent = logFinalResult(score);
