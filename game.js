@@ -33,6 +33,8 @@ function initializeGame() {
 
 function playRound(playerChoice, computerChoice, maxRounds) {
   if (gameActive) {
+    gameOutput.textContent = `Round: ${currentRound} of ${maxRounds}`;
+
     const roundResult = roundResults(playerChoice, computerChoice);
 
     displayChoice('player', playerChoice);
