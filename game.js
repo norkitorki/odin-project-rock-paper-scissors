@@ -59,7 +59,10 @@ function playRound(playerChoice, computerChoice, maxRounds) {
   return null;
 };
 
-function playRound(playerChoice, computerChoice) {
+function updateDisplayedScore(score) {
+  ['player', 'computer'].forEach(player => document.querySelector(`.${player}-score`).textContent = `(${score[player]})`);
+};
+
   const winningOutcomes = ['RockScissors', 'PaperRock', 'ScissorsPaper'];
 
   if (winningOutcomes.includes(`${playerChoice}${computerChoice}`)) {
