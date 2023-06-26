@@ -2,7 +2,7 @@ const gameControls = document.querySelector('.game-controls');
 const roundsSelect = document.getElementById('game-rounds');
 const startButton  = document.querySelector('.start-game');
 const gameChoices  = document.querySelector('.game-choices');
-const images       = gameChoices.querySelectorAll('img');
+const buttons      = gameChoices.querySelectorAll('button');
 const output       = document.querySelector('.output');
 const gameOutput   = document.querySelector('.game-output');
 const roundOutput  = document.querySelector('.round-output');
@@ -12,8 +12,10 @@ const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
 let roundsCount = 5, gameActive = false, currentRound, score;
 
 roundsSelect.addEventListener('change', (e) => roundsCount = Number(e.target.value));
+
 startButton.addEventListener('click', () => roundsCount > 0 ? initializeGame() : alert('Minimum number of rounds is 1'));
-images.forEach(img => img.addEventListener('click', () => playRound(img.alt, getComputerChoice(), roundsCount)));
+
+buttons.forEach(btn => btn.addEventListener('click', () => playRound(btn.dataset['choice'], getComputerChoice(), roundsCount)));
 
 function initializeGame() {
   gameActive   = true;
