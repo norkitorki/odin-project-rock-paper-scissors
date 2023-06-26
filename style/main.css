@@ -1,32 +1,62 @@
 body {
+  font-family: sans-serif, 'Times New Roman', Times, serif;
   font-size: 18px;
-  padding: 4rem;
+  padding: 2rem;
 }
 
-body, .choice-output > * {
+body, .output, .player-choice, .computer-choice {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 h1 { font-size: 3rem; }
 
 h2 { font-size: 2rem; }
 
-h1, h2 { font-weight: bold; }
+h1, h2, label, button, .game-output, .round-output { font-weight: bold; }
 
-.hidden {
-  display: none;
+input[type="number"] { padding: 0.5rem; }
+
+button {
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
 }
 
-.buttons > button {
-  padding: 1rem 2rem;
-}
+.start-game:hover, .start-game:focus { background-color: #acfaf3; }
 
-.output { margin: 1rem 0; }
-
-.choice-output {
+.game-choices {
   display: flex;
+  gap: 3rem;
+}
+
+.game-choices > button {
+  background: none;
+  border: none;
+}
+
+.game-choices > button:hover img, .game-choices > button:focus img {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.game-choices > button > img {
+  width: 64px;
+  height: 64px;
+}
+
+.output, .round-output { font-size: 1.3rem; }
+
+.choices {
+  display: flex;
+  justify-content: center;
   gap: 10rem;
 }
+
+.round-loss { color: #ca0000; }
+
+.round-win { color: #009400; }
+
+.hidden { display: none; }
