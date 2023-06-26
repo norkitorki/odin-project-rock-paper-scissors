@@ -71,6 +71,16 @@ function playRound(playerChoice, computerChoice) {
   }
 };
 
+function displayChoice(player, choice) {
+  const wrapper = document.querySelector(`.${player}-choice`);
+  const image   = wrapper.querySelector('img');
+
+  image.src = `images/${choice}.svg`;
+  image.alt = choice;
+
+  wrapper.classList.remove('hidden');
+};
+
 function logRoundResult(result, playerChoice, computerChoice) {
   if (result === 1) {
     console.log(`You win! ${playerChoice} beats ${computerChoice}`);
