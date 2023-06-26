@@ -7,8 +7,6 @@ const output       = document.querySelector('.output');
 const gameOutput   = document.querySelector('.game-output');
 const roundOutput  = document.querySelector('.round-output');
 
-const CHOICES = [ 'Rock', 'Paper', 'Scissors' ];
-
 let roundsCount = 5, gameActive = false, currentRound, score;
 
 roundsSelect.addEventListener('change', (e) => roundsCount = Number(e.target.value));
@@ -66,7 +64,7 @@ function playRound(playerChoice, computerChoice, maxRounds) {
 
 function getComputerChoice() {
   const index = Math.floor(Math.random() * 3);
-  return CHOICES[index];
+  return ['Rock', 'Paper', 'Scissors'][index];
 };
 
 function updateDisplayedScore(score) {
