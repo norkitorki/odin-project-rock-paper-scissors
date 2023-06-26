@@ -91,6 +91,13 @@ function logRoundResult(result, playerChoice, computerChoice) {
   }
 };
 
+function styleRoundOutput(output, roundResult) {
+  output.classList.remove('round-win', 'round-loss');
+  
+  if (roundResult === 1) output.classList.add('round-win');
+  if (roundResult === -1) output.classList.add('round-loss');
+};
+
 function logFinalResult(score) {
   const finalScore = `${score['player']} to ${score['computer']}`;
 
