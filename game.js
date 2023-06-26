@@ -83,11 +83,11 @@ function displayChoice(player, choice) {
 
 function logRoundResult(result, playerChoice, computerChoice) {
   if (result === 1) {
-    console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+    return `You win! ${playerChoice} beats ${computerChoice}`;
   } else if (result === 0) {
-    console.log(`It's a draw! both players chose ${playerChoice}`);
+    return `It's a draw! both players chose ${playerChoice}`;
   } else {
-    console.log(`You loose! ${computerChoice} beats ${playerChoice}`);
+    return `You loose! ${computerChoice} beats ${playerChoice}`;
   }
 };
 
@@ -102,36 +102,11 @@ function logFinalResult(score) {
   const finalScore = `${score['player']} to ${score['computer']}`;
 
   if (score['player'] > score['computer']) {
-    console.log(`Congratulations Player! You have won the game with a score of ${finalScore}`);
+    return `Congratulations! You have won the game with a score of ${finalScore}`;
   } else if (score['player'] === score['computer']) {
-    console.log(`The game ended in a draw at ${finalScore}`);
+    return `The game ended in a draw at ${finalScore}`;
   } else {
-    console.log(`You have lost the game with a score of ${finalScore}`);
-  }
-};
-
-function game(rounds = 5) {
-  console.clear();
-  let score = { player: 0, computer: 0 };
-
-  let playerChoice, computerChoice;
-  for (let i = 1; i <= rounds; i++) {
-    console.log(`Round: ${i} of ${rounds}, Score: Player: ${score['player']} Computer: ${score['computer']}`);
-
-    playerChoice   = playerSelection();
-    computerChoice = getComputerChoice();
-    result = playRound(playerChoice, computerChoice);
-    logRoundResult(result, playerChoice, computerChoice);
-
-    if (result === 1) score['player'] += 1;
-    if (result === -1) score['computer'] += 1;
-  }
-
-  logFinalResult(score);
-
-  let playAgain = prompt('Play again? (y/n)');
-  while (!['y', 'n'].includes(playAgain)) {
-    playAgain = prompt('Play again? (y/n)').toLowerCase();
+    return `You have lost the game with a score of ${finalScore}`;
   }
 
   return playAgain === 'y' ? game(rounds) : null;
