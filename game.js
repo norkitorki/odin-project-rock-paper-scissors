@@ -59,10 +59,16 @@ function playRound(playerChoice, computerChoice, maxRounds) {
   return null;
 };
 
+function getComputerChoice() {
+  const index = Math.floor(Math.random() * 3);
+  return CHOICES[index];
+};
+
 function updateDisplayedScore(score) {
   ['player', 'computer'].forEach(player => document.querySelector(`.${player}-score`).textContent = `(${score[player]})`);
 };
 
+function roundResults(playerChoice, computerChoice) {
   const winningOutcomes = ['RockScissors', 'PaperRock', 'ScissorsPaper'];
 
   if (winningOutcomes.includes(`${playerChoice}${computerChoice}`)) {
@@ -111,6 +117,4 @@ function logFinalResult(score) {
   } else {
     return `You have lost the game with a score of ${finalScore}`;
   }
-
-  return playAgain === 'y' ? game(rounds) : null;
 };
